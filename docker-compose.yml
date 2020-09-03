@@ -1,9 +1,10 @@
 version: '3.2'
 services:
   iris:
-    image: store/intersystems/iris-community:2020.3.0.200.0
-    container_name: iris-community
-    
+    build: 
+      context: dockerfiles
+      dockerfile: Dockerfile
+
     ports:
     # 51773 is the superserver default port 
     - ${IRIS_HOST_PORT}:51773
