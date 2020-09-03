@@ -1,5 +1,7 @@
 # irisdocker
-An Iris Docker Test Application
+An Iris Docker Development Template
+
+Change settings in .env to fit your needs.
 
 Management Portal:
 http://localhost:9092/csp/sys/UtilHome.csp
