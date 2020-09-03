@@ -6,9 +6,9 @@ services:
     
     ports:
     # 51773 is the superserver default port 
-    - 9091:51773
+    - ${IRIS_HOST_PORT}:51773
     # 52773 is the webserver/management portal port
-    - 9092:52773
+    - ${IRIS_WEBHOST_PORT}:52773
     volumes:
     # Maps directory in containr, named durable, to named volume defined below 
     - databases:/databases
