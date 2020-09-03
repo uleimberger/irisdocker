@@ -1,0 +1,21 @@
+version: '3.2'
+services:
+  iris:
+    image: store/intersystems/iris-community:2020.3.0.200.0
+    container_name: iris-community
+    
+    ports:
+    # 51773 is the superserver default port 
+    - 9091:51773
+    # 52773 is the webserver/management portal port
+    - 9092:52773
+    volumes:
+    # Maps directory in containr, named durable, to named volume defined below 
+    - databases:/databases
+    # Mounts a local directory for passing in files and test scripts
+    - ./app:/app
+    environment:
+    # Uses ISC_DATA_DIRECTORY to place the durable %SYS in the named volume
+    - ISC_DATA_DIRECTORY=/databases/irissys   
+volumes:
+  databases:
