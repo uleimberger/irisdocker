@@ -1,0 +1,23 @@
+{
+    "files.associations": {
+        "Dockerfile*": "dockerfile",
+        "iris.script": "objectscript"
+      },
+    "objectscript.conn" :{
+        "ns": "USER",
+        "active": true,
+        "server": "iris"
+    },
+    "intersystems.servers": {
+        "iris": {
+            "webServer": {
+                "scheme": "http",
+                "host": "127.0.0.1",
+                "port": 9092
+            },
+            "username": "SuperUser",
+            "description": "Connection to local InterSystems IRIS™ installed with default settings."
+        },
+        "/default": "iris"
+    }
+}
