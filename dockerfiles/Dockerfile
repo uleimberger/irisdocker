@@ -1,7 +1,10 @@
 ARG IMAGE=store/intersystems/iris-community:2020.3.0.200.0
 FROM $IMAGE
 
+# RUN adduser ${ISC_PACKAGE_MGRUSER} root && adduser ${ISC_PACKAGE_MGRUSER} ${ISC_PACKAGE_MGRUSER}
 USER root
+# WORKDIR /databases
+# RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /data
 
 WORKDIR /opt/irisapp
 RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisapp
