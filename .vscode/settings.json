@@ -5,7 +5,7 @@
       },
     "objectscript.conn" :{
         "ns": "USER",
-        "active": true,
+        "active": false,
         "server": "iris"
     },
     "intersystems.servers": {

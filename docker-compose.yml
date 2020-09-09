@@ -1,7 +1,7 @@
 version: '2.2'
 services:
   iris:
-    container_name: my-iris
+    container_name: ${CONTAINER_NAME}
     init: true
     build: 
       context: dockerfiles

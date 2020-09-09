@@ -12,7 +12,7 @@ Password: SYS
 (you have to change this after the first login)
 
 System Shell:
-docker exec –it iris-community bash
+docker exec –it my-iris bash
 
 Iris Terminal:
 iris session iris

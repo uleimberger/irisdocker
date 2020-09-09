@@ -17,3 +17,4 @@ COPY irisinstall.script /tmp/irisinstall.script
 # run iris and initial 
 RUN iris start IRIS \
 	&& iris session IRIS < /tmp/irisinstall.script
+
