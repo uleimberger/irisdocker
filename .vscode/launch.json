@@ -7,7 +7,7 @@
         {
             "type": "objectscript",
             "request":"launch",
-            "name":"COS Test debug",
+            "name":"COS Test debug after install",
             "program": "##class(Test.ObjectScript).Test()"
         }
     ]

@@ -19,5 +19,19 @@
             "description": "Connection to local InterSystems IRIS™ installed with default settings."
         },
         "/default": "iris"
+    },
+    "objectscript.export": {   
+        "folder": "app",
+        "addCategory": false,
+        "map": {},
+        "atelier": true,
+        "generated": false,
+        "filter": "",
+        "exactFilter": "",
+        "category": "*",
+        "noStorage": false,
+        "dontExportIfNoChanges": false,
+        "maxConcurrentConnections": 0,
+        "mapped": true
     }
 }
