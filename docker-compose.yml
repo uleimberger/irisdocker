@@ -1,11 +1,14 @@
-version: '2.2'
+version: '2.4'
 services:
   iris:
     container_name: ${CONTAINER_NAME}
     init: true
     build: 
       context: dockerfiles
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
+    command: --check-caps false
+
+    restart: always
     ports:
     # 51773 is the superserver default port 
     - ${IRIS_HOST_PORT}:51773
