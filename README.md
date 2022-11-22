@@ -21,8 +21,10 @@ docker exec –it my-iris bash
 Extensions:
 
 WebTerminal:
+Browser: http://<host>:<port>/terminal/
 
 ZPM Package Manager:
+In iris terminal call zpm
 USER> zpm 
 
 Iris Terminal:
