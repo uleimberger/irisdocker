@@ -8,7 +8,10 @@ XData setup
   <Default Name="Namespace" Value="IRISAPP"/>
   <Default Name="app" Value="irisapp" />
 
-  <Namespace Name="${Namespace}" Code="${Namespace}" Data="${Namespace}" Create="yes" Ensemble="0">
+  <Var Name="udopass" Value="udo"/>
+
+  <Log Level="3" Text="Creating database and namespace ..."/>
+  <Namespace Name="${Namespace}" Code="${Namespace}" Data="${Namespace}" Create="yes" Ensemble="1">
 
     <Configuration>
       <Database Name="${Namespace}" Dir="/opt/${app}/data" Create="yes" Resource="%DB_${Namespace}"/>
@@ -18,7 +21,8 @@ XData setup
        
     />
   </Namespace>
-
+  <Log Level="3" Text="Adding user udo ...."/>
+  <User Username="udo" PasswordVar="udo" Roles="%All" Fullname="Udo Leimberger" Namespace="IRISAPP" ChangePassword="0" Enabled="1"  Comment="SuperUser Udo"/>
 </Manifest>
 }
 

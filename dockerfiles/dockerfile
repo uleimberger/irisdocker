@@ -11,6 +11,8 @@ RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisapp
 USER ${ISC_PACKAGE_MGRUSER}
 
 COPY Installer.cls .
+COPY /terminal/WebTerminal-v4.9.5.xml .
+COPY /zpm/zpm-0.5.1.xml .
 COPY src /usr/irissys/mgr/src
 COPY irisinstall.script /tmp/irisinstall.script
 
