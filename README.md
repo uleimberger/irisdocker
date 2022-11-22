@@ -11,8 +11,19 @@ Username: SuperUser
 Password: SYS
 (you have to change this after the first login)
 
+Development User:
+Username: dev
+Password: DEV
+
 System Shell:
 docker exec –it my-iris bash
+
+Extensions:
+
+WebTerminal:
+
+ZPM Package Manager:
+USER> zpm 
 
 Iris Terminal:
 iris session iris
