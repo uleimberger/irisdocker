@@ -1,4 +1,4 @@
-Class App.Installer
+Class Docker.Installer
 {
 
 XData setup

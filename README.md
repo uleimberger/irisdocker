@@ -24,13 +24,13 @@ WebTerminal:
 Browser: http://<host>:<port>/terminal/
 
 ZPM Package Manager:
-In iris terminal call zpm
+Call zpm in iris terminal
 USER> zpm 
 
 Iris Terminal:
 iris session iris
 
-Iris Terminal in namespace
-iris session iris -U USER
+Iris Terminal in namespace IRISAPP
+iris session iris -U IRISAPP
 
 
