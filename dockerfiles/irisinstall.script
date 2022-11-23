@@ -1,6 +1,6 @@
 ; run installer to create namespace
 do $SYSTEM.OBJ.Load("/opt/irisapp/Installer.cls", "ck")
-set sc = ##class(App.Installer).setup() 
+set sc = ##class(Docker.Installer).setup() 
 
 ;import webterminal
 do $system.OBJ.Load("/opt/irisapp/WebTerminal-v4.9.5.xml","ck") 

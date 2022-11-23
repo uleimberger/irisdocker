@@ -1,10 +1,13 @@
 # irisdocker
-An Iris Docker Development Template
+An Iris Docker WSL Development Template
+
+- includes WebTerminal
+- includes ZPM
 
 Change settings in .env to fit your needs.
 
 Management Portal:
-http://localhost:9092/csp/sys/UtilHome.csp
+http://<host>:<port>/csp/sys/UtilHome.csp
 
 Standard User:
 Username: SuperUser
@@ -16,7 +19,10 @@ Username: dev
 Password: DEV
 
 System Shell:
-docker exec –it my-iris bash
+docker exec –it <containername> bash
+
+Iris Console:
+docker exec -it <containername> iris session iris
 
 Extensions:
 
