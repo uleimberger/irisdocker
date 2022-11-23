@@ -12,17 +12,16 @@ XData setup
 
   <Log Level="3" Text="Creating database and namespace ..."/>
   <Namespace Name="${Namespace}" Code="${Namespace}" Data="${Namespace}" Create="yes" Ensemble="1">
-
     <Configuration>
       <Database Name="${Namespace}" Dir="/opt/${app}/data" Create="yes" Resource="%DB_${Namespace}"/>
     </Configuration>
     <Import File="${SourceDir}" Flags="ck" Recurse="1"/>
-    <CSPApplication Url="/csp/${app}" Directory="${cspdir}${app}"  ServeFiles="1" Recurse="1" MatchRoles=":%DB_${Namespace}" AuthenticationMethods="32"
-       
-    />
+    <CSPApplication Url="/csp/${app}" Directory="${cspdir}${app}"  ServeFiles="1" Recurse="1" MatchRoles=":%DB_${Namespace}" AuthenticationMethods="32"/>
   </Namespace>
-  <Log Level="3" Text="Adding user udo ...."/>
+
+  <Log Level="3" Text="Creating dev user with role %All ..."/>
   <User Username="dev" PasswordVar="DEV" Roles="%All" Fullname="Udo Leimberger" Namespace="IRISAPP" ChangePassword="0" Enabled="1"  Comment="SuperUser Udo"/>
+
 </Manifest>
 }
 
