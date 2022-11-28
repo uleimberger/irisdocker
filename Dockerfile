@@ -12,7 +12,7 @@ USER root
 # WORKDIR /data
 # RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /data
 WORKDIR /opt/irisdb
-RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisapp
+RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisdb
 USER ${ISC_PACKAGE_MGRUSER}
 
 WORKDIR /opt/irisapp
@@ -23,6 +23,7 @@ COPY dockerfiles/irisinstall.script /tmp/irisinstall.script
 COPY dockerfiles/Installer.cls .
 COPY dockerfiles/terminal/WebTerminal-v4.9.5.xml .
 COPY dockerfiles/zpm/zpm-0.5.1.xml .
+COPY dockerfiles/demos/EndStateProduction.xml .
 COPY irisapp ./irisapp
 
 # run iris and initial 

@@ -6,7 +6,7 @@
     "objectscript.conn" :{
         "ns": "IRISAPP",
         "active": true,
-        "server": "iris"
+        "server": "iriscoding"
     },
     "intersystems.servers": {
         "iris": {
