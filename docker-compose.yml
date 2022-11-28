@@ -4,21 +4,24 @@ services:
     container_name: ${CONTAINER_NAME}
     init: true
     build: 
-      context: dockerfiles
-      dockerfile: dockerfile
+      context: .
+      #args:
+      #  irissrcdir: ${IRIS_SRC_DIR}        
+      dockerfile: Dockerfile
     command: --check-caps false
 
-    restart: always
+    # restart: always
     ports:
     # 51773 is the superserver default port 
     - ${IRIS_HOST_PORT}:51773
     # 52773 is the webserver/management portal port
     - ${IRIS_WEBHOST_PORT}:52773
+
     volumes:
     # Maps directory in containr, named durable, to named volume defined below 
     #- data:/data
     # Mounts a local directory for passing in files and test scripts
-    - ./app:/app
+    - ./data:/irisapp
     #environment:
     # Uses ISC_DATA_DIRECTORY to place the durable %SYS in the named volume
     #- ISC_DATA_DIRECTORY=/data/irissys/

@@ -6,13 +6,13 @@
     "objectscript.conn" :{
         "ns": "IRISAPP",
         "active": true,
-        "server": "iriscoding"
+        "server": "iris"
     },
     "intersystems.servers": {
         "iris": {
             "webServer": {
                 "scheme": "http",
-                "host": "127.0.0.1",
+                "host": "localhost",
                 "port": 9092
             },
             "username": "SuperUser",
@@ -21,7 +21,7 @@
         "/default": "iris"
     },
     "objectscript.export": {   
-        "folder": "app",
+        "folder": "irisapp",
         "addCategory": false,
         "map": {},
         "atelier": true,

@@ -4,7 +4,7 @@ Class Docker.Installer
 XData setup
 {
 <Manifest>
-  <Default Name="SourceDir" Value="#{$system.Process.CurrentDirectory()}src"/>
+  <Default Name="SourceDir" Value="/opt/irisdb/"/>
   <Default Name="Namespace" Value="IRISAPP"/>
   <Default Name="app" Value="irisapp" />
 
@@ -13,10 +13,10 @@ XData setup
   <Log Level="3" Text="Creating database and namespace ..."/>
   <Namespace Name="${Namespace}" Code="${Namespace}" Data="${Namespace}" Create="yes" Ensemble="1">
     <Configuration>
-      <Database Name="${Namespace}" Dir="/opt/${app}/data" Create="yes" Resource="%DB_${Namespace}"/>
+      <Database Name="${Namespace}" Dir="${SourceDir}{$app}/data" Create="yes" Resource="%DB_${Namespace}"/>
     </Configuration>
-    <Import File="${SourceDir}" Flags="ck" Recurse="1"/>
-    <CSPApplication Url="/csp/${app}" Directory="${cspdir}${app}"  ServeFiles="1" Recurse="1" MatchRoles=":%DB_${Namespace}" AuthenticationMethods="32"/>
+    <Log Level="3" Text="Creating Cachè Server pages .."/>
+    <CSPApplication Url="/csp/${app}" Directory="${SourceDir}{$app}/csp"  ServeFiles="1" Recurse="1" MatchRoles=":%DB_${Namespace}" AuthenticationMethods="32"/>
   </Namespace>
 
   <Log Level="3" Text="Creating dev user with role %All ..."/>

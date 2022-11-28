@@ -1,4 +1,4 @@
-Class Test.ObjectScript
+Class Docker.ObjectScript
 {
 
 ClassMethod Test() As %Status

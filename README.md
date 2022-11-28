@@ -3,6 +3,8 @@ An Iris Docker WSL Development Template
 
 - includes WebTerminal
 - includes ZPM
+- inculdes USER namespace
+- includes IRISAPP namespace
 
 Change settings in .env to fit your needs.
 

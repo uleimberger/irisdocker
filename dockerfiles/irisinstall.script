@@ -1,3 +1,10 @@
+; set some basic settings
+zn "%SYS"
+;passwords never expire
+Do ##class(Security.Users).UnExpireUserPasswords("*")
+
+; Install some applications in USER namespace
+zn "USER""
 ; run installer to create namespace
 do $SYSTEM.OBJ.Load("/opt/irisapp/Installer.cls", "ck")
 set sc = ##class(Docker.Installer).setup() 
@@ -6,10 +13,10 @@ set sc = ##class(Docker.Installer).setup()
 do $system.OBJ.Load("/opt/irisapp/WebTerminal-v4.9.5.xml","ck") 
 
 ;import zpm package tool
-;do $system.OBJ.Load("/opt/irisapp/zpm-0.5.1.xml","ck") 
+do $system.OBJ.Load("/opt/irisapp/zpm-0.5.1.xml","ck") 
 
-zn "%SYS"
-Do ##class(Security.Users).UnExpireUserPasswords("*")
+; Install src code in irisapp
+do $SYSTEM.OBJ.Load("/opt/irisapp/irisapp", "ck")
 
 ; call your initial methods here
 halt
