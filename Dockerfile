@@ -36,7 +36,6 @@ COPY ${IRIS_INSTALLER} .
 COPY ${IRIS_TERMINAL} WebTerminal.xml
 COPY ${IRIS_ZPM} zpm.xml
 COPY ${IRIS_DEMO1} .
-COPY irisapp ./irisapp
 
 # run iris and initial 
 RUN iris start IRIS \

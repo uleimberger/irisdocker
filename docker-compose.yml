@@ -25,10 +25,10 @@ services:
     - ${IRIS_WEBHOST_PORT}:52773
 
     volumes:
-    # Maps directory in containr, named durable, to named volume defined below 
+    # Maps directory in container, named durable, to named volume defined below 
     #- data:/data
     # Mounts a local directory for passing in files and test scripts
-    - ./data:/irisapp
+    # - ./data:/irisapp
     #environment:
     # Uses ISC_DATA_DIRECTORY to place the durable %SYS in the named volume
     #- ISC_DATA_DIRECTORY=/data/irissys/

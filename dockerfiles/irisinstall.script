@@ -18,8 +18,5 @@ do $system.OBJ.Load("/opt/irisapp/zpm.xml","ck")
 ;import demo data red light Business service
 do $system.OBJ.Load("/opt/irisapp/EndStateProduction.xml","ck") 
 
-; Install src code in irisapp
-do $SYSTEM.OBJ.Load("/opt/irisapp/irisapp", "ck")
-
 ; call your initial methods here
 halt
