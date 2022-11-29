@@ -7,14 +7,14 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        IRIS_SRC_IMAGE: ${IRIS_SRC_IMAGE}
-        IRIS_APP_DIR: ${IRIS_APP_DIR}       
-        IRIS_DB_DIR: ${IRIS_DB_DIR}
-        IRIS_INSTALL_SCRIPT: ${IRIS_INSTALL_SCRIPT}
-        IRIS_INSTALLER: ${IRIS_INSTALLER}
-        IRIS_TERMINAL: ${IRIS_TERMINAL}
-        IRIS_ZPM: ${IRIS_ZPM}
-        IRIS_DEMO1: ${IRIS_DEMO1}       
+        - IRIS_SRC_IMAGE=${IRIS_SRC_IMAGE}
+        - IRIS_APP_DIR=${IRIS_APP_DIR}       
+        - IRIS_DB_DIR=${IRIS_DB_DIR}
+        - IRIS_INSTALL_SCRIPT=${IRIS_INSTALL_SCRIPT}
+        - IRIS_INSTALLER=${IRIS_INSTALLER}
+        - IRIS_TERMINAL=${IRIS_TERMINAL}
+        - IRIS_ZPM=${IRIS_ZPM}
+        - IRIS_DEMO1=${IRIS_DEMO1}       
     command: --check-caps false
 
     # restart: always
@@ -24,7 +24,7 @@ services:
     # 52773 is the webserver/management portal port
     - ${IRIS_WEBHOST_PORT}:52773
 
-    volumes:
+    #volumes:
     # Maps directory in container, named durable, to named volume defined below 
     #- data:/data
     # Mounts a local directory for passing in files and test scripts
@@ -32,5 +32,3 @@ services:
     #environment:
     # Uses ISC_DATA_DIRECTORY to place the durable %SYS in the named volume
     #- ISC_DATA_DIRECTORY=/data/irissys/
-#volumes:
-  #data:

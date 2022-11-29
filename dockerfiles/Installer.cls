@@ -6,17 +6,17 @@ XData setup
 <Manifest>
   <Default Name="SourceDir" Value="/opt/irisdb/"/>
   <Default Name="Namespace" Value="IRISAPP"/>
-  <Default Name="app" Value="irisapp" />
+  <Default Name="AppDir" Value="irisapp" />
   <Default Name="devpass" Value="DEV"/>
   <Default Name="demopass" Value="DEMO"/>
 
   <Log Level="3" Text="Creating database and namespace ..."/>
   <Namespace Name="${Namespace}" Code="${Namespace}" Data="${Namespace}" Create="yes" Ensemble="1">
     <Configuration>
-      <Database Name="${Namespace}" Dir="${SourceDir}{$app}/data" Create="yes" Resource="%DB_${Namespace}"/>
+      <Database Name="${Namespace}" Dir="${SourceDir}{$AppDir}/data" Create="yes" Resource="%DB_${Namespace}"/>
     </Configuration>
     <Log Level="3" Text="Creating Cachè Server pages .."/>
-    <CSPApplication Url="/csp/${app}" Directory="${SourceDir}{$app}/csp"  ServeFiles="1" Recurse="1" MatchRoles=":%DB_${Namespace}" AuthenticationMethods="32"/>
+    <CSPApplication Url="/csp/${AppDir}" Directory="${SourceDir}{$AppDir}/csp"  ServeFiles="1" Recurse="1" MatchRoles=":%DB_${Namespace}" AuthenticationMethods="32"/>
   </Namespace>
 
   <Log Level="3" Text="Creating demo user with role %All ..."/>
