@@ -9,6 +9,7 @@ XData setup
   <Default Name="app" Value="irisapp" />
 
   <Var Name="devpass" Value="DEV"/>
+  <Var Name="demopass" Value="DEMO"/>
 
   <Log Level="3" Text="Creating database and namespace ..."/>
   <Namespace Name="${Namespace}" Code="${Namespace}" Data="${Namespace}" Create="yes" Ensemble="1">
@@ -19,8 +20,11 @@ XData setup
     <CSPApplication Url="/csp/${app}" Directory="${SourceDir}{$app}/csp"  ServeFiles="1" Recurse="1" MatchRoles=":%DB_${Namespace}" AuthenticationMethods="32"/>
   </Namespace>
 
+  <Log Level="3" Text="Creating demo user with role %All ..."/>
+  <User Username="demo" PasswordVar="${demopass}" Roles="%All" Fullname="IRIS Demo" Namespace="IRISAPP" ChangePassword="0" Enabled="1"  Comment="SuperUser Developer"/>
+
   <Log Level="3" Text="Creating dev user with role %All ..."/>
-  <User Username="dev" PasswordVar="DEV" Roles="%All" Fullname="Udo Leimberger" Namespace="IRISAPP" ChangePassword="0" Enabled="1"  Comment="SuperUser Udo"/>
+  <User Username="dev" PasswordVar="${devpass}" Roles="%All" Fullname="IRIS Developer" Namespace="IRISAPP" ChangePassword="0" Enabled="1"  Comment="SuperUser Demo"/>
 
 </Manifest>
 }

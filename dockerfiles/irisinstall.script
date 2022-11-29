@@ -4,7 +4,7 @@ zn "%SYS"
 Do ##class(Security.Users).UnExpireUserPasswords("*")
 
 ; Install some applications in USER namespace
-zn "USER""
+zn "USER"
 ; run installer to create namespace
 do $SYSTEM.OBJ.Load("/opt/irisapp/Installer.cls", "ck")
 set sc = ##class(Docker.Installer).setup() 

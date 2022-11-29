@@ -6,9 +6,15 @@
     "configurations": [
         {
             "type": "objectscript",
-            "request":"launch",
-            "name":"COS Test debug after install",
-            "program": "##class(Test.ObjectScript).Test()"
+            "request": "launch",
+            "name": "Installer Debug",
+            "program": "##class(Docker.Installer).setup()"
+        },
+        {
+            "type": "objectscript",
+            "request": "launch",
+            "name": "Docker Object Script",
+            "program": "##class(Docker.ObjectScript).Test()"
         }
     ]
 }

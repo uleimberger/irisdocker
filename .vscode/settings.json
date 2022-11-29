@@ -1,37 +1,8 @@
 {
-    "files.associations": {
-        "Dockerfile*": "dockerfile",
-        "iris.script": "objectscript"
-      },
-    "objectscript.conn" :{
+    "workbench.colorTheme": "InterSystems Default Dark",
+    "objectscript.conn": {
+        "server": "iris-wsl",
         "ns": "USER",
-        "active": true,
-        "server": "iriscoding"
-    },
-    "intersystems.servers": {
-        "iris": {
-            "webServer": {
-                "scheme": "http",
-                "host": "localhost",
-                "port": 9092
-            },
-            "username": "SuperUser",
-            "description": "Connection to local InterSystems IRIS™ installed with default settings."
-        },
-        "/default": "iris"
-    },
-    "objectscript.export": {   
-        "folder": "irisapp",
-        "addCategory": false,
-        "map": {},
-        "atelier": true,
-        "generated": false,
-        "filter": "",
-        "exactFilter": "",
-        "category": "*",
-        "noStorage": false,
-        "dontExportIfNoChanges": false,
-        "maxConcurrentConnections": 0,
-        "mapped": true
+        "active": true
     }
 }
