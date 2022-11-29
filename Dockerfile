@@ -1,29 +1,41 @@
-ARG IMAGE=intersystems/iris-community:2022.1.0.209.0
-ARG IMAGE=containers.intersystems.com/intersystems/iris-community:2022.3.0.545.0
-#ARG IMAGE=intersystems/iris-community:2022.3.0.545.0
+ARG IRIS_SRC_IMAGE
+ARG IRIS_APP_DIR
+ARG IRIS_DB_DIR
+ARG IRIS_INSTALL_SCRIPT
+ARG IRIS_INSTALLER
+ARG IRIS_TERMINAL
+ARG IRIS_ZPM
+ARG IRIS_DEMO1
 
-FROM $IMAGE
+FROM ${IRIS_SRC_IMAGE}
 
 # Parameter has to be after FROM to access them aftter FROM
-# ARG irissrcdir
+ARG IRIS_APP_DIR
+ARG IRIS_DB_DIR
+ARG IRIS_INSTALL_SCRIPT
+ARG IRIS_INSTALLER
+ARG IRIS_TERMINAL
+ARG IRIS_ZPM
+ARG IRIS_DEMO1
 
 # RUN adduser ${ISC_PACKAGE_MGRUSER} root && adduser ${ISC_PACKAGE_MGRUSER} ${ISC_PACKAGE_MGRUSER}
 USER root
 # WORKDIR /data
 # RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /data
-WORKDIR /opt/irisdb
-RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisdb
+WORKDIR ${IRIS_DB_DIR}
+
+RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} ${IRIS_DB_DIR}
 USER ${ISC_PACKAGE_MGRUSER}
 
-WORKDIR /opt/irisapp
-RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisapp
+WORKDIR ${IRIS_APP_DIR}
+RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} ${IRIS_APP_DIR}
 USER ${ISC_PACKAGE_MGRUSER}
 
-COPY dockerfiles/irisinstall.script /tmp/irisinstall.script
-COPY dockerfiles/Installer.cls .
-COPY dockerfiles/terminal/WebTerminal-v4.9.5.xml .
-COPY dockerfiles/zpm/zpm-0.5.1.xml .
-COPY dockerfiles/demos/EndStateProduction.xml .
+COPY ${IRIS_INSTALL_SCRIPT} /tmp/irisinstall.script
+COPY ${IRIS_INSTALLER} .
+COPY ${IRIS_TERMINAL} WebTerminal.xml
+COPY ${IRIS_ZPM} zpm.xml
+COPY ${IRIS_DEMO1} .
 COPY irisapp ./irisapp
 
 # run iris and initial 

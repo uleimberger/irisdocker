@@ -10,10 +10,10 @@ do $SYSTEM.OBJ.Load("/opt/irisapp/Installer.cls", "ck")
 set sc = ##class(Docker.Installer).setup() 
 
 ;import webterminal
-do $system.OBJ.Load("/opt/irisapp/WebTerminal-v4.9.5.xml","ck") 
+do $system.OBJ.Load("/opt/irisapp/WebTerminal.xml","ck") 
 
 ;import zpm package tool
-do $system.OBJ.Load("/opt/irisapp/zpm-0.5.1.xml","ck") 
+do $system.OBJ.Load("/opt/irisapp/zpm.xml","ck") 
 
 ;import demo data red light Business service
 do $system.OBJ.Load("/opt/irisapp/EndStateProduction.xml","ck") 

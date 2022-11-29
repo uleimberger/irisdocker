@@ -5,9 +5,16 @@ services:
     init: true
     build: 
       context: .
-      #args:
-      #  irissrcdir: ${IRIS_SRC_DIR}        
       dockerfile: Dockerfile
+      args:
+        IRIS_SRC_IMAGE: ${IRIS_SRC_IMAGE}
+        IRIS_APP_DIR: ${IRIS_APP_DIR}       
+        IRIS_DB_DIR: ${IRIS_DB_DIR}
+        IRIS_INSTALL_SCRIPT: ${IRIS_INSTALL_SCRIPT}
+        IRIS_INSTALLER: ${IRIS_INSTALLER}
+        IRIS_TERMINAL: ${IRIS_TERMINAL}
+        IRIS_ZPM: ${IRIS_ZPM}
+        IRIS_DEMO1: ${IRIS_DEMO1}       
     command: --check-caps false
 
     # restart: always
